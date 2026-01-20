@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOPSIS Analysis Tool</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>TOPSIS Analysis Tool</h1>
+                <button id="downloadBtn" class="btn-download" style="display: none;">Download Results</button>
+            </div>
+        </header>
+
+        <div class="card">
+            <form id="topsisForm">
+                <div class="form-group">
+                    <label for="inputFile">
+                        <span class="label-text">Upload Input File</span>
+                        <span class="label-hint">(.csv or .xlsx format)</span>
+                    </label>
+                    <input type="file" id="inputFile" accept=".csv,.xlsx" required>
+                    <small class="help-text">File must have at least 3 columns. First column is identifier, rest are criteria (numeric values only).</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="weights">
+                        <span class="label-text">Weights</span>
+                        <span class="label-hint">(comma-separated)</span>
+                    </label>
+                    <input type="text" id="weights" placeholder="e.g., 1,1,1,2" required>
+                    <small class="help-text">Enter weights separated by commas. Number of weights must match number of criteria.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="impacts">
+                        <span class="label-text">Impacts</span>
+                        <span class="label-hint">(comma-separated + or -)</span>
+                    </label>
+                    <input type="text" id="impacts" placeholder="e.g., +,+,-,+" required>
+                    <small class="help-text">Enter + for beneficial criteria and - for non-beneficial criteria.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">
+                        <span class="label-text">Email Address</span>
+                        <span class="label-hint">(to receive results)</span>
+                    </label>
+                    <input type="email" id="email" placeholder="your.email@example.com" required>
+                    <small class="help-text">Results will be sent to this email address.</small>
+                </div>
+
+                <div id="errorMessage" class="error-message"></div>
+                <div id="successMessage" class="success-message"></div>
+
+                <button type="submit" id="submitBtn" class="btn-primary">
+                    <span id="btnText">Analyze & Send Results</span>
+                    <span id="btnLoader" class="loader" style="display: none;"></span>
+                </button>
+            </form>
+        </div>
+
+        <footer>
+            <p>made by lakshita gupta_102303505_3C35</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
