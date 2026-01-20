@@ -1,8 +1,6 @@
 # Topsis-Lakshita-102303505
 
-[![PyPI version](https://img.shields.io/pypi/v/Topsis-Lakshita-102303505.svg)](https://pypi.org/project/Topsis-Lakshita-102303505/)
-[![Python 3.7+](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![pypi](https://img.shields.io/badge/pypi-v1.0.0-blue) ![python](https://img.shields.io/badge/python-3.7+-blue) ![License](https://img.shields.io/badge/License-MIT-yellow)
 
 Implementation of the TOPSIS multi-criteria decision-making method: includes CLI program, Python package, and web service with email functionality.
 
@@ -107,11 +105,6 @@ print(result_df)
 - Returns pandas DataFrame
 - Generates output CSV file
 
-### Dependencies
-- pandas >= 1.0.0
-- numpy >= 1.18.0
-- openpyxl >= 3.0.0
-
 ---
 
 ## Part-III: TOPSIS Web Service
@@ -134,90 +127,10 @@ Vercel Link: [https://topsis-website-alpha.vercel.app/](https://topsis-website-a
 - All criteria values must be numeric
 - Minimum 3 columns required
 
-### Features
-- Real-time input validation
-- Browser-based TOPSIS calculation
-- Results emailed as CSV
-- Download results as CSV
-- Modern, responsive UI
-- Loading indicators during processing
-
-### Technologies
-- HTML5, CSS3, JavaScript (ES6+)
-- XLSX.js for Excel parsing
-- EmailJS for email delivery
-- Vercel for deployment
-
----
-
-## Input File Format
-
-All implementations require the same format:
-
-```csv
-Model,Price,Storage,Camera,Looks
-M1,250,16,12,5
-M2,200,16,8,3
-M3,300,32,16,4
-```
-
-**Requirements:**
-- First column: Alternative names (text)
-- Remaining columns: Numeric criteria values
-- Minimum 3 columns (1 name + 2 criteria)
-- First row contains headers
-
-## Output Format
-
-All implementations produce:
-
-```csv
-Model,Price,Storage,Camera,Looks,Topsis Score,Rank
-M3,300,32,16,4,0.6910,1
-M1,250,16,12,5,0.5347,2
-M2,200,16,8,3,0.3082,3
-```
-
-**Output includes:**
-- All original columns
-- Topsis Score (0-1 range, higher is better)
-- Rank (1 = best alternative)
-
-## Algorithm Steps
-
-1. Normalize decision matrix using vector normalization
-2. Apply weights to normalized values
-3. Calculate ideal best and worst solutions
-4. Compute Euclidean distances from ideal solutions
-5. Calculate performance scores
-6. Rank alternatives based on scores
-
-
-## Algorithm Steps
-
-1. Normalize decision matrix using vector normalization
-2. Apply weights to normalized values
-3. Calculate ideal best and worst solutions
-4. Compute Euclidean distances from ideal solutions
-5. Calculate performance scores
-6. Rank alternatives based on scores
-
----
-
-## Links
-
-- **PyPI Package**: [https://pypi.org/project/Topsis-Lakshita-102303505/](https://pypi.org/project/Topsis-Lakshita-102303505/)
-- **GitHub Repository**: [https://github.com/Lakshita018/topsis](https://github.com/Lakshita018/topsis)
-- **Live Web Application**: [https://topsis-website-alpha.vercel.app/](https://topsis-website-alpha.vercel.app/)
-
 ## Author
 
 **Lakshita Gupta**  
 Roll Number: 102303505  
 Email: lakshitagupta0518@gmail.com
-
-## License
-
-MIT License - Free to use and modify
 
 
